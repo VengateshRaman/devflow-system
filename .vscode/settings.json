@@ -1,0 +1,6 @@
+{
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Visual Studio Light",
+    "editor.experimental.asyncTokenizationVerification": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
