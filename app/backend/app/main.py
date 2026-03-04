@@ -1,10 +1,12 @@
 from fastapi import FastAPI
-from app.api import health
+from app.services.health_service import HealthService
 
 app = FastAPI()
 
-app.include_router(health.router)
-
 @app.get("/")
-async def root():
-    return {"message": "DevFlow Backend Running 🚀"}
+def root():
+    return {"message": "Structured Backend 🚀"}
+
+@app.get("/health")
+def health_check():
+    return HealthService.get_health_status()
