@@ -1,12 +1,12 @@
 from fastapi import FastAPI
-from app.services.health_service import HealthService
+from app.core.config import settings
+from app.routers import health_router
+from app.routers import prediction_router
 
-app = FastAPI()
+app = FastAPI(
+    title=settings.APP_NAME,
+    version=settings.VERSION
+)
 
-@app.get("/")
-def root():
-    return {"message": "Structured Backend 🚀"}
-
-@app.get("/health")
-def health_check():
-    return HealthService.get_health_status()
+app.include_router(health_router.router)
+app.include_router(prediction_router.router)
