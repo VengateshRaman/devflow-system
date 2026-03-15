@@ -1,12 +1,6 @@
 from fastapi import FastAPI
-from app.core.config import settings
-from app.routers import health_router
-from app.routers import prediction_router
+from app.routers.api_router import api_router
 
-app = FastAPI(
-    title=settings.APP_NAME,
-    version=settings.VERSION
-)
+app = FastAPI()
 
-app.include_router(health_router.router)
-app.include_router(prediction_router.router)
+app.include_router(api_router)

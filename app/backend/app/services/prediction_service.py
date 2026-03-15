@@ -1,13 +1,24 @@
-# app/services/prediction_service.py
+# from app.ml.inference import predict_price
 
-from app.ml.model_loader import model
+# class PredictionService:
+
+#     @staticmethod
+#     def predict(area: int, bedrooms: int):
+#         price = predict_price(area, bedrooms)
+
+#         return {
+#             "predicted_price": price
+#         }
+
+
+from app.ml.inference import predict_price
 
 class PredictionService:
 
-    @staticmethod
-    def predict(age, income):
-        prediction = model.predict(age, income)
+    def predict(self, area: int, bedrooms: int):
+
+        price = predict_price(area, bedrooms)
 
         return {
-            "prediction": prediction
+            "predicted_price": price
         }
