@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from app.routers.v1 import health_router
-from app.routers.v1 import prediction_router
+# from app.routers.v1 import prediction_router
 
 # router = APIRouter()
 
